@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Katalog Igráčků</title>
+    <style>
+
+    </style>
+<link rel="stylesheet" id="hlavni-styl" href="styly/retro.css">
+</head>
+<body>
+      <div class="sekce-filtru" style="margin-bottom: 15px; border-bottom: 2px dashed rgba(255,255,255,0.3); padding-bottom: 15px;">
+            <strong>Vzhled webu:</strong>
+            <button class="filtr-tlacitko aktivni" data-typ="vzhled" onclick="zmenStyl('styly/retro.css', this)">📦 Klasické Krabičky</button>
+            <button class="filtr-tlacitko" data-typ="vzhled" onclick="zmenStyl('styly/helma.css', this)">🪖 Styl Helma VB</button>
+<button class="filtr-tlacitko" data-typ="vzhled" onclick="zmenStyl('styly/katalog.css', this)">📜 Tištěný Katalog</button>
+<button class="filtr-tlacitko" data-typ="vzhled" onclick="zmenStyl('styly/policka.css', this)">🪵 Dřevěná Polička</button>
+<button class="filtr-tlacitko" data-typ="vzhled" onclick="zmenStyl('styly/arkada.css', this)">🕹️ Herní Arkáda</button>
+
+        </div>
+
+    <h1>Katalog Igráčků (1976–2006)</h1>
+
+    <div class="ovladaci-lista">
+        <!-- 5. Vyhledávání -->
+
+
+ <div class="sekce-filtru" style="margin-top: 0; display: flex; align-items: center; gap: 8px;">
+            <strong>Najdi Igráčka:</strong>
+            <div style="position: relative; display: inline-block; width: 100%; max-width: 400px;">
+                <input type="text" id="vyhledavani" class="vyhledavani-input" placeholder="Napište název, doplněk (např. helma, meč)..." style="padding-right: 35px; width: 100%;">
+                <button id="smazat-hledani" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 1.2em; color: #94a3b8; cursor: pointer; display: none; padding: 0; line-height: 1;">&times;</button>
+            </div>
+        </div>
+
+        <!-- 1. Filtry podle hlavních témat (Profese) -->
+        <div class="sekce-filtru">
+            <strong>1. Témata (Profese):</strong>
+            <button class="filtr-tlacitko aktivni" data-typ="profese" data-hodnota="Vše" onclick="filtrZmen('profese', 'Vše')">Vše</button>
+            <button class="filtr-tlacitko" data-typ="profese" data-hodnota="Stavebnictví" onclick="filtrZmen('profese', 'Stavebnictví')">Stavebnictví</button>
+            <button class="filtr-tlacitko" data-typ="profese" data-hodnota="Gastronomie" onclick="filtrZmen('profese', 'Gastronomie')">Gastronomie</button>
+            <button class="filtr-tlacitko" data-typ="profese" data-hodnota="Řemeslo" onclick="filtrZmen('profese', 'Řemeslo')">Řemesla</button>
+            <button class="filtr-tlacitko" data-typ="profese" data-hodnota="Doprava" onclick="filtrZmen('profese', 'Doprava')">Doprava</button>
+            <button class="filtr-tlacitko" data-typ="profese" data-hodnota="Bezpečnost" onclick="filtrZmen('profese', 'Bezpečnost')">Bezpečnost</button>
+            <button class="filtr-tlacitko" data-typ="profese" data-hodnota="Zdravotnictví" onclick="filtrZmen('profese', 'Zdravotnictví')">Zdravotnictví</button>
+            <button class="filtr-tlacitko" data-typ="profese" data-hodnota="Záchranáři" onclick="filtrZmen('profese', 'Záchranáři')">Záchranáři</button>
+            <button class="filtr-tlacitko" data-typ="profese" data-hodnota="Zemědělství" onclick="filtrZmen('profese', 'Zemědělství')">Zemědělství</button>
+            <button class="filtr-tlacitko" data-typ="profese" data-hodnota="Sport" onclick="filtrZmen('profese', 'Sport')">Sport</button>
+            <button class="filtr-tlacitko" data-typ="profese" data-hodnota="Výzkum" onclick="filtrZmen('profese', 'Výzkum')">Výzkum</button>
+            <button class="filtr-tlacitko" data-typ="profese" data-hodnota="Armáda" onclick="filtrZmen('profese', 'Armáda')">Armáda</button>
+            <button class="filtr-tlacitko" data-typ="profese" data-hodnota="Spoje" onclick="filtrZmen('profese', 'Spoje')">Spoje</button>
+            <button class="filtr-tlacitko" data-typ="profese" data-hodnota="Rodina" onclick="filtrZmen('profese', 'Rodina')">Rodina</button>
+            <button class="filtr-tlacitko" data-typ="profese" data-hodnota="Zvířata" onclick="filtrZmen('profese', 'Zvířata')">Zvířata</button>
+            <button class="filtr-tlacitko" data-typ="profese" data-hodnota="Obchod" onclick="filtrZmen('profese', 'Obchod')">Obchod</button>
+            <button class="filtr-tlacitko" data-typ="profese" data-hodnota="Služby" onclick="filtrZmen('profese', 'Služby')">Služby</button>
+            <button class="filtr-tlacitko" data-typ="profese" data-hodnota="Dobrodružné" onclick="filtrZmen('profese', 'Dobrodružné')">Dobrodružné</button>
+        </div>
+
+        <!-- 2. Filtry podle Sběratelské rarity -->
+        <div class="sekce-filtru">
+            <strong>2. Sběratelská rarita:</strong>
+            <button class="filtr-tlacitko aktivni" data-typ="rarita" data-hodnota="Vše" onclick="filtrZmen('rarita', 'Vše')">Vše</button>
+            <button class="filtr-tlacitko" data-typ="rarita" data-hodnota="Extrémní" onclick="filtrZmen('rarita', 'Extrémní')">💎 Extrémní</button>
+            <button class="filtr-tlacitko" data-typ="rarita" data-hodnota="Vysoká" onclick="filtrZmen('rarita', 'Vysoká')">⭐ Vysoká</button>
+            <button class="filtr-tlacitko" data-typ="rarita" data-hodnota="Střední" onclick="filtrZmen('rarita', 'Střední')">⚡ Střední</button>
+            <button class="filtr-tlacitko" data-typ="rarita" data-hodnota="Běžná" onclick="filtrZmen('rarita', 'Běžná')">📦 Běžná</button>
+            <button class="filtr-tlacitko" data-typ="rarita" data-hodnota="Nízká" onclick="filtrZmen('rarita', 'Nízká')">📉 Nízká</button>
+        </div>
+
+        <!-- 3. Filtry podle Historické éry -->
+        <div class="sekce-filtru">
+            <strong>3. Historická éra:</strong>
+            <button class="filtr-tlacitko aktivni" data-typ="era" data-hodnota="Vše" onclick="filtrZmen('era', 'Vše')">Vše</button>
+            <button class="filtr-tlacitko" data-typ="era" data-hodnota="Klasické retro (1976–1990)" onclick="filtrZmen('era', 'Klasické retro (1976–1990)')">Klasické retro (1976–1990)</button>
+            <button class="filtr-tlacitko" data-typ="era" data-hodnota="Přechodová éra (1991–1994)" onclick="filtrZmen('era', 'Přechodová éra (1991–1994)')">Přechodová éra (1991–1994)</button>
+            <button class="filtr-tlacitko" data-typ="era" data-hodnota="Přelomová éra (1995–1999)" onclick="filtrZmen('era', 'Přelomová éra (1995–1999)')">Přelomová éra (1995–1999)</button>
+            <button class="filtr-tlacitko" data-typ="era" data-hodnota="Finální éra před krachem (2000–2006)" onclick="filtrZmen('era', 'Finální éra před krachem (2000–2006)')">Finální éra (2000–2006)</button>
+        </div>
+
+        <!-- 4. Filtry podle Široké kategorie -->
+        <div class="sekce-filtru">
+            <strong>4. Kategorie produktu:</strong>
+            <button class="filtr-tlacitko aktivni" data-typ="kategorie" data-hodnota="Vše" onclick="filtrZmen('kategorie', 'Vše')">Vše</button>
+            <button class="filtr-tlacitko" data-typ="kategorie" data-hodnota="Profese" onclick="filtrZmen('kategorie', 'Profese')">Profese</button>
+            <button class="filtr-tlacitko" data-typ="kategorie" data-hodnota="Vozidla" onclick="filtrZmen('kategorie', 'Vozidla')">Vozidla</button>
+            <button class="filtr-tlacitko" data-typ="kategorie" data-hodnota="Rodina" onclick="filtrZmen('kategorie', 'Rodina')">Rodina</button>
+        </div>
+
+        <!-- 5. Řazení na Časové ose -->
+        <div class="sekce-filtru">
+            <strong>5. Časové řazení:</strong>
+            <button class="filtr-tlacitko aktivni" data-typ="razeni" data-hodnota="vzestupne" onclick="razeniZmen('vzestupne')">Od nejstaršího po nejnovější</button>
+            <button class="filtr-tlacitko" data-typ="razeni" data-hodnota="sestupne" onclick="razeniZmen('sestupne')">Od nejnovějšího po nejstarší</button>
+        </div>
+    </div>
+
+    <!-- Místo pro vykreslení karet -->
+    <div id="katalog"></div>
+
+    <!-- Načtení souborů -->
+    <script src="igracciData.js"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>

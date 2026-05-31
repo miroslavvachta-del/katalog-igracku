@@ -1,0 +1,249 @@
+/* styly/helma.css - Oficiální retro styl inspirovaný žlutým designem a auty VB */
+
+body {
+    font-family: 'Arial Black', 'Impact', sans-serif;
+    background-color: #facc15; /* Sytá, čistě žlutá barva kapot Veřejné bezpečnosti */
+    margin: 0;
+    padding: 20px;
+    color: #000000;
+}
+
+/* Hlavní nadpis se stylizovaným nápisem VB */
+h1 {
+    color: #000000;
+    text-align: center;
+    font-size: 2.8em;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+h1::before {
+    content: "VB • ";
+    color: #ffffff;
+    -webkit-text-stroke: 2px #000;
+    text-shadow: 2px 2px 0px #000;
+}
+
+/* Ovládací panel jako bílá střecha / helma hlídek VB */
+.ovladaci-lista {
+    background: #ffffff; 
+    color: #000000;
+    padding: 25px;
+    margin: 0 auto 30px auto;
+    max-width: 1100px;
+    border: 4px solid #000000;
+    box-shadow: 8px 8px 0px #000000;
+}
+
+.sekce-filtru {
+    margin-top: 14px;
+    font-size: 0.95em;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    border-bottom: 1px dashed rgba(0,0,0,0.15);
+    padding-bottom: 12px;
+}
+
+.sekce-filtru:last-child {
+    border-bottom: none;
+}
+
+.sekce-filtru strong {
+    display: inline-block;
+    width: 160px;
+    color: #000000;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Tlačítka VB */
+.filtr-tlacitko {
+    background: #ffffff;
+    border: 2px solid #000000;
+    padding: 8px 14px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 0.85em;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: #000000;
+    box-shadow: 2px 2px 0px #000000;
+    transition: all 0.1s ease-in-out;
+}
+
+.filtr-tlacitko:hover {
+    background: #facc15;
+}
+
+.filtr-tlacitko.aktivni {
+    background: #000000;
+    color: #ffffff;
+    border-color: #000000;
+    transform: translate(1px, 1px);
+    box-shadow: 0px 0px 0px #000000;
+}
+
+.vyhledavani-input {
+    padding: 10px 14px;
+    font-size: 1em;
+    font-family: 'Arial', sans-serif;
+    border-radius: 2px;
+    border: 3px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: bold;
+    box-shadow: 4px 4px 0px #000000;
+}
+
+/* MŘÍŽKA KATALOGU - SPOLEHLIVÉ ZAROVNÁNÍ KARET */
+#katalog {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* STRUKTURA KARTY S VNITŘNÍM ZAROVNÁNÍM FLEXBOXEM */
+.karta-igracka {
+    background: #ffffff !important;
+    border: 3px solid #000000 !important;
+    border-radius: 2px !important;
+    box-shadow: 6px 6px 0px #000000 !important;
+    font-family: 'Arial', sans-serif;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    min-height: 520px; /* Jednotná pevná minimální výška pro dokonalé zarovnání řad */
+    overflow: hidden !important;
+    padding: 0 !important; /* Padding se řídí vnitřními divy */
+    margin: 0 !important;
+    width: auto !important;
+    transition: transform 0.15s ease;
+}
+
+.karta-igracka:hover {
+    transform: translateY(-4px);
+}
+
+/* Horní sekce karty (Obrázek) */
+.karta-igracka .foto-obal {
+    border-radius: 0 !important;
+    border-bottom: 2px solid #000000 !important;
+    padding: 15px !important;
+    background: #f8f9fa;
+    min-height: 180px;
+}
+
+/* Střední textová sekce (Názvy, popisy) */
+.karta-igracka > div:nth-child(1) {
+    padding: 12px 16px 0 16px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Roztáhne text, aby doplňky byly vždy ve stejné výšce */
+}
+
+.karta-igracka h3 {
+    margin: 0 0 4px 0;
+    color: #000000;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 1.2em;
+}
+
+/* Sekce technických specifikací / doplňků */
+.karta-igracka > div:nth-child(2) {
+    padding: 0 16px 12px 16px;
+    border-top: 1px dashed #cbd5e1;
+    margin-top: auto; /* Přišpendlí doplňky k dolní části před štítek */
+    font-size: 0.82em;
+}
+
+/* Spodní medailový štítek rarity přilepený na okraj */
+.karta-igracka p[style*="background"] {
+    margin: 0 !important;
+    border-radius: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: none !important;
+    border-top: 2px solid #000000 !important;
+    padding: 10px 16px !important;
+    font-size: 0.85em;
+    width: auto !important;
+}
+
+
+
+/* MŘÍŽKA KATALOGU VB */
+body.styl-helma #katalog {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+    grid-auto-rows: 1fr !important;
+    gap: 25px !important;
+    max-width: 1150px !important;
+    margin: 0 auto !important;
+    padding: 10px !important;
+}
+
+/* STRUKTURA KARTY VB */
+body.styl-helma .karta-igracka {
+    background: #ffffff !important;
+    border: 3px solid #000000 !important;
+    border-radius: 2px !important;
+    box-shadow: 6px 6px 0px #000000 !important;
+    font-family: 'Arial', sans-serif !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+body.styl-helma .karta-horni-sekce {
+    padding: 0 16px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
+}
+
+body.styl-helma .karta-horni-sekce .foto-embal {
+    margin: 0 -16px 12px -16px !important;
+    border-radius: 0 !important;
+    border-bottom: 2px solid #000000 !important;
+    padding: 15px !important;
+    background: #f8f9fa !important;
+    min-height: 180px !important;
+}
+
+body.styl-helma .karta-igracka h3 {
+    margin: 0 0 4px 0 !important;
+    color: #000000 !important;
+    font-family: 'Arial Black', sans-serif !important;
+}
+
+body.styl-helma .karta-spodni-sekce {
+    display: flex !important;
+    flex-direction: column !important;
+    margin-top: auto !important;
+}
+
+body.styl-helma .karta-spodni-sekce > div {
+    padding: 12px 16px !important;
+    border-top: 1px dashed #cbd5e1 !important;
+}
+
+body.styl-helma .karta-spodni-sekce p[style*="background"] {
+    margin: 0 !important;
+    border-radius: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: none !important;
+    border-top: 2px solid #000000 !important;
+    padding: 10px 16px !important;
+}

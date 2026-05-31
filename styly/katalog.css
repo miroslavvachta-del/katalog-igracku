@@ -1,0 +1,179 @@
+/* styly/katalog.css - Kompletní vyčištěný styl starého tištěného hračkářského katalogu */
+/* Struktura a zarovnání 100% sjednoceno a pojištěno přes body.styl-katalog */
+
+body {
+    font-family: 'Courier New', Courier, monospace; /* Písmo starého psacího stroje */
+    background-color: #f4ebd0; /* Zažloutlý, patinovaný dobový papír */
+    margin: 0;
+    padding: 20px;
+    color: #2b2b2b;
+}
+
+/* Hlavní nadpis se stylizovaným nápisem pro archivní tisk */
+h1 {
+    color: #1e3a8a;
+    text-align: center;
+    font-size: 2.4em;
+    font-family: 'Arial Black', sans-serif;
+    text-transform: uppercase;
+    border-bottom: 3px double #2b2b2b;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+/* Ovládací panel jako archivní formulář / hračkářská příručka */
+.ovladaci-lista {
+    background: #eae0c8; 
+    color: #000000;
+    padding: 25px;
+    margin: 0 auto 30px auto;
+    max-width: 1100px;
+    border: 2px solid #2b2b2b;
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.15);
+}
+
+.sekce-filtru {
+    margin-top: 14px;
+    font-size: 0.95em;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    border-bottom: 1px dashed #2b2b2b;
+    padding-bottom: 12px;
+}
+
+.sekce-filtru:last-child {
+    border-bottom: none;
+}
+
+.sekce-filtru strong {
+    display: inline-block;
+    width: 160px;
+    color: #1e3a8a;
+    font-weight: bold;
+}
+
+/* Kartotéční tlačítka */
+.filtr-tlacitko {
+    background: #fffdf5;
+    border: 1px solid #2b2b2b;
+    padding: 6px 12px;
+    margin: 2px;
+    border-radius: 0px; /* Přísně ostré rohy */
+    cursor: pointer;
+    font-size: 0.85em;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: #000000;
+    box-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+    transition: all 0.1s ease-in-out;
+}
+
+.filtr-tlacitko:hover {
+    background: #fbf5e2;
+}
+
+.filtr-tlacitko.aktivni {
+    background: #1e3a8a;
+    color: #ffffff;
+    border-color: #1e3a8a;
+}
+
+.vyhledavani-input {
+    padding: 8px 12px;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    border: 1px solid #2b2b2b;
+    background-color: #fffdf5;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* ================================================================= */
+/* NEPRŮSTŘELNÉ SROVNÁNÍ KATALOGU PŘI NAVÁZÁNÍ NA BODY.STYL-KATALOG */
+/* ================================================================= */
+
+/* Mřížka mrazí výšku řady */
+body.styl-katalog #katalog {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+    grid-auto-rows: 1fr !important;
+    gap: 25px !important;
+    max-width: 1150px !important;
+    margin: 0 auto !important;
+    padding: 10px !important;
+}
+
+/* Karta se roztáhne na maximální povolenou výšku řady */
+body.styl-katalog .karta-igracka {
+    background: #fffdf5 !important;
+    border: 1px solid #2b2b2b !important;
+    border-radius: 0px !important;
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.1) !important;
+    font-family: 'Courier New', monospace !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: auto !important;
+}
+
+/* Horní blok s textem a obrázkem */
+body.styl-katalog .karta-horni-sekce {
+    padding: 0 16px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
+}
+
+/* Obrázek bez zaoblení od levého okraje k pravému */
+body.styl-katalog .karta-horni-sekce .foto-obal {
+    margin: 0 -16px 12px -16px !important;
+    border-bottom: 1px dashed #2b2b2b !important;
+    border-radius: 0 !important;
+    background: #fcf8ec !important;
+    min-height: 180px !important;
+}
+
+body.styl-katalog .karta-igracka h3 {
+    margin: 0 0 4px 0 !important;
+    color: #1e3a8a !important;
+    font-family: Arial, sans-serif !important;
+}
+
+
+
+
+
+
+/* SPODNÍ SEKCE KARTY PAPÍR */
+body.styl-katalog .karta-spodni-sekce {
+    display: flex !important;
+    flex-direction: column !important;
+    margin-top: auto !important; /* Přitlačí doplňky a štítek k dolnímu okraji */
+}
+
+/* Vnitřní obal doplňků, který jsme teď opravili v JavaScriptu */
+body.styl-katalog .karta-spodni-sekce > div {
+    padding: 12px 16px !important;
+    border-top: 1px dashed #2b2b2b !important; /* Dobová přerušovaná retro čára nad doplňky */
+    font-size: 0.85em;
+}
+
+/* Spodní medailový štítek rarity přilepený na okraj od kraje ke kraji */
+body.styl-katalog .karta-spodni-sekce p[style*="background"] {
+    margin: 0 !important;
+    border-radius: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: none !important;
+    border-top: 1px solid #2b2b2b !important; /* Čistá pevná linka nad štítkem rarity */
+    padding: 10px 16px !important;
+    font-size: 0.88em;
+    width: auto !important;
+}
+

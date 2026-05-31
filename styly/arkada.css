@@ -1,0 +1,156 @@
+/* styly/arkada.css - Herní neonový styl 80. let (100% zarovnaná verze) */
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #030712; /* Hluboká herní černá */
+    margin: 0;
+    padding: 20px;
+    color: #38bdf8; /* Svítící modrá */
+}
+
+h1 {
+    color: #f43f5e; /* Neonově růžová */
+    text-align: center;
+    font-size: 2.6em;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #f43f5e, 0 0 20px #f43f5e;
+    margin-bottom: 25px;
+}
+
+/* Ovládací panel jako arkádový automat */
+.ovladaci-lista {
+    background: #111827; 
+    color: #38bdf8;
+    padding: 25px;
+    margin: 0 auto 30px auto;
+    max-width: 1100px;
+    border: 3px solid #f43f5e;
+    box-shadow: 0 0 15px #f43f5e;
+}
+
+.sekce-filtru {
+    margin-top: 14px;
+    font-size: 0.95em;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    border-bottom: 1px solid #1f2937;
+    padding-bottom: 12px;
+}
+
+.sekce-filtru:last-child {
+    border-bottom: none;
+}
+
+.sekce-filtru strong {
+    display: inline-block;
+    width: 160px;
+    color: #a855f7; /* Fialové popisy */
+}
+
+/* Kybernetická tlačítka */
+.filtr-tlacitko {
+    background: #1f2937;
+    border: 1px solid #38bdf8;
+    padding: 8px 14px;
+    color: #38bdf8;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.filtr-tlacitko:hover {
+    background: #38bdf8;
+    color: #000;
+    box-shadow: 0 0 10px #38bdf8;
+}
+
+.filtr-tlacitko.aktivni {
+    background: #22c55e; /* Zelená pro aktivní stav */
+    color: #000;
+    border-color: #22c55e;
+    box-shadow: 0 0 10px #22c55e;
+}
+
+.vyhledavani-input {
+    padding: 10px 14px;
+    border: 1px solid #38bdf8;
+    background-color: #000;
+    color: #38bdf8;
+}
+
+/* MŘÍŽKA ARKÁDY - SPOLEHLIVÉ HORIZONTÁLNÍ VYROVNÁNÍ PRO BODY.STYL-ARKADA */
+body.styl-arkada #katalog {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+    grid-auto-rows: 1fr !important; /* Zamrazí výšku řady */
+    gap: 25px !important;
+    max-width: 1150px !important;
+    margin: 0 auto !important;
+    padding: 10px !important;
+}
+
+/* NEONOVÁ KARTA S VNITŘNÍM FILTROVÁNÍM TEXTŮ */
+body.styl-arkada .karta-igracka {
+    background: #111827 !important;
+    border: 2px solid #38bdf8 !important;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.3) !important;
+    font-family: monospace !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    height: 100% !important; /* Vyplní celou mřížku */
+    overflow: hidden !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: auto !important;
+}
+
+/* Horní sekce s popisem */
+body.styl-arkada .karta-horni-sekce {
+    padding: 0 16px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important; /* Srovná texty do lajny */
+    color: #94a3b8 !important;
+}
+
+body.styl-arkada .karta-horni-sekce .foto-obal {
+    margin: 0 -16px 12px -16px !important;
+    border-radius: 0 !important;
+    border-bottom: 1px solid #1f2937 !important;
+    padding: 15px !important;
+    background: #030712 !important;
+    min-height: 180px !important;
+}
+
+body.styl-arkada .karta-igracka h3 {
+    margin: 0 0 4px 0 !important;
+    color: #fff !important;
+    text-shadow: 0 0 5px #38bdf8;
+}
+
+/* Spodní sekce s tématy přitlačená dolů */
+body.styl-arkada .karta-spodni-sekce {
+    display: flex !important;
+    flex-direction: column !important;
+    margin-top: auto !important;
+}
+
+body.styl-arkada .karta-spodni-sekce > div {
+    padding: 12px 16px !important;
+    border-top: 1px solid #1f2937 !important;
+    font-size: 0.85em;
+}
+
+/* Spodní svítící lišta rarity */
+body.styl-arkada .karta-spodni-sekce p[style*="background"] {
+    margin: 0 !important;
+    border-radius: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: none !important;
+    border-top: 1px solid #38bdf8 !important;
+    padding: 10px 16px !important;
+    font-size: 0.85em;
+}
